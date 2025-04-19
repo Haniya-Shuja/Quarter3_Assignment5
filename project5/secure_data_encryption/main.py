@@ -1,9 +1,4 @@
 
-
-
-
-
-
 import streamlit as st
 import hashlib
 import os
@@ -43,8 +38,8 @@ if "is_logged_in" not in st.session_state:
 stored_data = load_data()
 
 # --- UI Starts ---
-st.title("🔐 Data Storage App (Unencrypted)")
-st.warning("⚠️ Encryption has been removed in this version.")
+st.title("🔐 Data Storage App")
+
 
 menu = ['Home', 'Store Data', 'Retrieve Data', 'Login']
 choice = st.sidebar.radio('Navigation', menu)
@@ -91,7 +86,7 @@ elif choice == "Store Data":
                 }
 
                 save_data(stored_data)
-                st.success('✅ Data stored successfully (unencrypted).')
+                st.success('✅ Data stored successfully .')
             else:
                 st.warning("Please fill in all fields.")
 
